@@ -20,7 +20,7 @@ const AdminDashboard = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "/api/admin/reset-balances",
+        "https://leave-system-server.onrender.com/api/admin/reset-balances",
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -74,7 +74,7 @@ const AdminDashboard = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        "/api/admin/leave-balances",
+        "https://leave-system-server.onrender.com/api/admin/leave-balances",
         {
           user_id: item.user_id,
           type: item.type,
