@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import AdminDashboard from './pages/AdminDashboard';
+import ManagerDashboard from './pages/ManagerDashboard';
+import EmployeeDashboard from './pages/EmployeeDashboard';
+import LeaveStatusPage from './pages/LeaveStatusPage';
+import LeaveHistoryPage from './pages/LeaveHistoryPage';
+import ApplyLeavePage from './pages/ApplyLeavePage';
+import AllEmployeesPage from './pages/AllEmployeesPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/manager" element={<ManagerDashboard />} />
+        <Route path="/employee" element={<EmployeeDashboard />} />
+        <Route path="/status" element={<LeaveStatusPage />} />
+        <Route path="/history" element={<LeaveHistoryPage />} />
+        <Route path="/apply-leave" element={<ApplyLeavePage />} />
+        <Route path="/all-employees" element={<AllEmployeesPage />} />
+      </Routes>
+    </Router>
   );
 }
 

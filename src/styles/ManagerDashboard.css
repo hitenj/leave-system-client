@@ -1,0 +1,34 @@
+.manager-dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fffaf3;
+}
+
+.manager-dashboard {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 250px;
+}
+
+.dashboard-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: orange;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.info-text {
+  font-style: italic;
+  color: #555;
+}
+
+.error-text {
+  color: red;
+  font-weight: bold;
+}

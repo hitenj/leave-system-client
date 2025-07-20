@@ -1,0 +1,51 @@
+.all-employees-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fffaf3;
+}
+
+.all-employees-page {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 250px; /* add this */
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: orange;
+  margin-bottom: 1.5rem;
+}
+
+.employees-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.employees-table th,
+.employees-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.employees-table th {
+  background-color: orange;
+  color: white;
+}
+
+.employees-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.info-text {
+  font-style: italic;
+  color: #555;
+}
+
+.error-text {
+  color: red;
+  font-weight: bold;
+}

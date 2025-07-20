@@ -1,0 +1,60 @@
+.employee-dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fef8f2;
+}
+
+.employee-dashboard {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 250px;
+}
+
+.dashboard-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: orange;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.info-text {
+  font-style: italic;
+  color: #555;
+}
+
+.error-text {
+  color: red;
+  font-weight: bold;
+}
+
+.quick-links {
+  margin-bottom: 20px;
+}
+.quick-link-btn {
+  margin-right: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.quick-link-btn:hover {
+  background-color: #0056b3;
+}
+
+.balance-table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+.balance-table th,
+.balance-table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+}

@@ -1,0 +1,57 @@
+.apply-leave-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fdf9f2;
+  margin-left: 250px; /* add this */
+}
+
+.apply-leave-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+.apply-title {
+  color: orange;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.leave-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.leave-form label {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.leave-form input,
+.leave-form textarea {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.leave-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.submit-button {
+  padding: 10px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: darkorange;
+}
