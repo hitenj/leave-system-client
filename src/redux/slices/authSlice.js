@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { saveToken, parseJWT } from '../../../../client/src/utils/auth';
+import { saveToken, parseJWT } from '../../utils/auth';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
