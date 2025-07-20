@@ -118,49 +118,56 @@ const AdminDashboard = () => {
                 </tr>
               </thead>
               <tbody>
-                {balances.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.User?.name}</td>
-                    <td>{item.User?.email}</td>
-                    <td>{item.type}</td>
-                    <td>{item.year}</td>
-                    <td>
-                      {editRow === index ? (
-                        <input
-                          type="number"
-                          value={newBalance}
-                          onChange={(e) => setNewBalance(e.target.value)}
-                        />
-                      ) : (
-                        item.balance
-                      )}
-                    </td>
-                    <td>
-                      {editRow === index ? (
-                        <>
-                          <button onClick={() => handleUpdateBalance(item)}>
-                            Save
+                {Array.isArray(balances) && balances.length > 0 ? (
+                  balances.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item.User?.name || "N/A"}</td>
+                      <td>{item.User?.email || "N/A"}</td>
+                      <td>{item.type}</td>
+                      <td>{item.year}</td>
+                      <td>
+                        {editRow === index ? (
+                          <input
+                            type="number"
+                            value={newBalance}
+                            onChange={(e) => setNewBalance(e.target.value)}
+                          />
+                        ) : (
+                          item.balance
+                        )}
+                      </td>
+                      <td>
+                        {editRow === index ? (
+                          <>
+                            <button onClick={() => handleUpdateBalance(item)}>
+                              Save
+                            </button>
+                            <button onClick={() => setEditRow(null)}>
+                              Cancel
+                            </button>
+                          </>
+                        ) : (
+                          <button
+                            onClick={() => {
+                              setEditRow(index);
+                              setNewBalance(item.balance);
+                            }}
+                          >
+                            Edit
                           </button>
-                          <button onClick={() => setEditRow(null)}>
-                            Cancel
-                          </button>
-                        </>
-                      ) : (
-                        <button
-                          onClick={() => {
-                            setEditRow(index);
-                            setNewBalance(item.balance);
-                          }}
-                        >
-                          Edit
-                        </button>
-                      )}
-                    </td>
+                        )}
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="6">No leave balance data available.</td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
 
+            {/* Audit Logs Table */}
             <h2 className="section-title">Audit Logs</h2>
             <table className="admin-table">
               <thead>
@@ -173,15 +180,21 @@ const AdminDashboard = () => {
                 </tr>
               </thead>
               <tbody>
-                {logs.map((log, index) => (
-                  <tr key={index}>
-                    <td>{log.User?.name}</td>
-                    <td>{log.User?.email}</td>
-                    <td>{log.action_type}</td>
-                    <td>{log.action_target}</td>
-                    <td>{new Date(log.timestamp).toLocaleString()}</td>
+                {Array.isArray(logs) && logs.length > 0 ? (
+                  logs.map((log, index) => (
+                    <tr key={index}>
+                      <td>{log.User?.name || "N/A"}</td>
+                      <td>{log.User?.email || "N/A"}</td>
+                      <td>{log.action_type}</td>
+                      <td>{log.action_target}</td>
+                      <td>{new Date(log.timestamp).toLocaleString()}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="5">No audit logs found.</td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
           </>
