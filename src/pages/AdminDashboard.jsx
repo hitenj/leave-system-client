@@ -43,14 +43,16 @@ const AdminDashboard = () => {
       }
 
       const [balanceRes, logsRes] = await Promise.all([
-        axios.get("/api/admin/leave-balances", {
+        axios.get("https://leave-system-server.onrender.com/api/admin/leave-balances", {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        axios.get("/api/admin/audit-logs", {
+        axios.get("https://leave-system-server.onrender.com/api/admin/audit-logs", {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);
 
+      console.log("Fetched Balances:", balanceRes.data);
+      console.log("Fetched Logs:", logsRes.data);
       setBalances(balanceRes.data);
       setLogs(logsRes.data);
     } catch (err) {
