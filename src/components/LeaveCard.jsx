@@ -15,7 +15,7 @@ const LeaveCard = ({ leave, isManagerView = false, onActionComplete }) => {
       const token = localStorage.getItem("token");
       const mappedStatus = action === "approve" ? "approved" : "rejected";
       await axios.patch(
-        `/api/leaves/${leave.id}/${action}`,
+        `https://leave-system-server.onrender.com/api/leaves/${leave.id}/${action}`,
         {
           status: mappedStatus, // 'approve' or 'reject'
           manager_comment: comment,

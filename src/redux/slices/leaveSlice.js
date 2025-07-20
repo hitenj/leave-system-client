@@ -4,7 +4,7 @@ import axios from 'axios';
 // ✅ Fetch current user's leaves (employee)
 export const fetchMyLeaves = createAsyncThunk('leaves/fetchMyLeaves', async (_, thunkAPI) => {
   try {
-    const res = await axios.get('/api/leaves/me', {
+    const res = await axios.get('https://leave-system-server.onrender.com/api/leaves/me', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
@@ -18,7 +18,7 @@ export const fetchMyLeaves = createAsyncThunk('leaves/fetchMyLeaves', async (_, 
 // ✅ Fetch all leaves (manager)
 export const fetchAllLeaves = createAsyncThunk('leaves/fetchAllLeaves', async (_, thunkAPI) => {
   try {
-    const res = await axios.get('/api/leaves', {
+    const res = await axios.get('https://leave-system-server.onrender.com/api/leaves', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },

@@ -20,7 +20,7 @@ const EmployeeDashboard = () => {
   const fetchMyBalances = async () => {
   try {
     const token = localStorage.getItem('token');
-    const res = await axios.get('/api/leaves/my-balances', {
+    const res = await axios.get('https://leave-system-server.onrender.com/api/leaves/my-balances', {
       headers: { Authorization: `Bearer ${token}` },
     });
     setBalances(res.data);

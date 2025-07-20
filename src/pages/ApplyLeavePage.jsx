@@ -19,7 +19,7 @@ const ApplyLeavePage = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('/api/leaves', form, {
+      const res = await axios.post('https://leave-system-server.onrender.com/api/leaves', form, {
         headers: {
           Authorization: `Bearer ${token}`
         }

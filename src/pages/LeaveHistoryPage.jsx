@@ -19,7 +19,7 @@ const LeaveHistoryPage = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`/api/leaves/${id}/cancel`, {
+      await axios.delete(`https://leave-system-server.onrender.com/api/leaves/${id}/cancel`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert('Leave cancelled successfully');
