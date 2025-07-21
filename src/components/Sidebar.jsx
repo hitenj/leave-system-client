@@ -25,7 +25,7 @@ const Sidebar = ({ role }) => {
         return (
           <>
             <li><Link to="/manager">Manager Dashboard</Link></li>
-            <li><Link to="/manager/leaves">Manage Leave Requests</Link></li>
+            <li><Link to="/manager">Manage Leave Requests</Link></li>
           </>
         );
 
