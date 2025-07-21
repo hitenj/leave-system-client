@@ -1,70 +1,196 @@
-# Getting Started with Create React App
+📝 Leave Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack Leave Management System built with React (frontend), Node.js + Express (backend), and MySQL (via Railway) for managing employee leaves with roles like Admin, Manager, and Employee.
 
-## Available Scripts
+🔗 Live Links
 
-In the project directory, you can run:
+Frontend (Vercel): https://leave-system-client.vercel.app
 
-### `npm start`
+Backend (Render): https://leave-system-server.onrender.com
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+📌 Features
 
-### `npm run build`
+👤 User Roles
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Admin:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+View, edit, reset all leave balances
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+See system audit logs
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Manager:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Approve/reject leave requests
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Employee:
 
-## Learn More
+Apply for leave
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+View leave status and balance
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🧮 Leave Management
 
-### Analyzing the Bundle Size
+Apply for casual or sick leave
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Automatic deduction from leave balance
 
-### Making a Progressive Web App
+Reset yearly leave balances (admin-only)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+View personal leave history
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+🔐 Authentication
 
-### Deployment
+JWT-based login with role-based dashboard routing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Token stored in localStorage for persistent sessions
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+---
+
+⚙️ Tech Stack
+
+Layer	Tech Used
+
+Frontend	React, React Router, Axios
+Backend	Node.js, Express, Sequelize (ORM)
+Database	MySQL (hosted on Railway)
+Hosting	Vercel (frontend), Render (backend)
+
+
+
+---
+
+🛠 Setup Instructions
+
+1. Clone Repositories
+
+git clone https://github.com/<your-username>/leave-system-client
+git clone https://github.com/<your-username>/leave-system-server
+
+2. Environment Variables
+
+Create a .env file in the server directory:
+
+JWT_SECRET=your_secret_key
+
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_HOST=your_mysql_host
+DB_PORT=your_mysql_port
+DB_NAME=railway
+DB_DIALECT=mysql
+
+3. Install Dependencies
+
+Client:
+
+
+cd leave-system-client
+npm install
+
+Server:
+
+
+cd leave-system-server
+npm install
+
+4. Run Locally
+
+# client
+npm start
+
+# server
+npm run dev
+
+
+---
+
+🚀 Deployment Notes
+
+Frontend deployed to Vercel
+
+Backend deployed to Render
+
+Database hosted on Railway
+
+Make sure to configure CORS and .env properly on Render
+
+Use seed script (seed.js) to populate initial users and leave balances
+
+
+
+---
+
+📦 Seed Users
+
+Admin:    admin@example.com / password123
+Manager:  manager1@example.com / password123
+Employee: employee1@example.com / password123
+
+
+---
+
+📄 Screens & Functionality
+
+Login Pages (per role)
+
+Admin Dashboard
+
+Leave balances table (editable)
+Audit log table
+Reset balances button
+
+
+Manager Dashboard
+
+View & approve/reject leave requests
+
+
+Employee Dashboard
+
+Apply leave
+Leave history
+
+
+
+
+---
+
+📁 Folder Structure
+
+leave-system-client/
+  src/
+    pages/
+    components/
+    styles/
+    utils/
+    redux/
+
+leave-system-server/
+  models/
+  routes/
+  controllers/
+  config/
+
+
+---
+
+📋 Notes
+
+Clean coding standards and proper structure are maintained
+
+Role-based access is enforced on both frontend and backend
+
+Audit logs for admin actions are tracked
+
+README contains full deployment and usage instructions
